@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useContext } from "react";
 import BannerPizzas from "../components/BannerPizzas";
 import { AppContext } from "../Context/PizzaContext";
+import { useNavigate } from "react-router-dom";
 
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -14,10 +15,16 @@ export default () => {
 
   let totalPizzas = context.pizzas
 
-  console.log(totalPizzas);
+  //console.log(totalPizzas);
 
   const letraMayuscula = (palabra) => {
     return palabra.charAt(0).toUpperCase() + palabra.slice(1);
+  };
+
+  const navigate = useNavigate();
+
+  const verPizza = (pizzaId) => {
+    navigate(`/pizza/${pizzaId}`);
   };
 
   return (
@@ -48,11 +55,15 @@ export default () => {
                   </ListGroup.Item>
                 ))}
 
+                <ListGroup.Item>
+                  $ {pizza.price}
+                </ListGroup.Item>
+
               </ListGroup>
 
               <Card.Body className="botones-card">
 
-                <Button variant="primary">Ver Más <img className="icono-navbar" src="./src/assets/ojos.png"/></Button>
+                <Button onClick={() => verPizza(pizza.id)} variant="primary">Ver Más <img className="icono-navbar" src="./src/assets/ojos.png"/></Button>
                 <Button variant="danger">Añadir <img className="icono-navbar" src="./src/assets/compra.png"/></Button>
 
               </Card.Body>

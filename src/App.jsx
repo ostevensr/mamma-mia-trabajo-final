@@ -26,7 +26,7 @@ function App() {
                         <Routes>
                             <Route index element={<Home />} />
                             <Route path="/home" element={<Home />} />
-                            <Route path="/pizzas/:id" element={<DetallePizza />} />
+                            <Route path="/:pizzaId" element={<DetallePizza />} />
                             <Route path="/carro" element={<Carro />} />
                             <Route path="*" element={<NotFound />} />
                         </Routes>

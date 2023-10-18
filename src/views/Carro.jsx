@@ -3,6 +3,8 @@ import { useContext } from "react";
 import { AppContext } from "../Context/PizzaContext";
 
 import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 export default function Carro() {
 
@@ -17,16 +19,20 @@ export default function Carro() {
             
             <h2>Detalles del Pedido:</h2>
 
-            <div className="cont-pedidos">
-                <ul>
-                {context.carro.map((pizza) => (
-                    <li key={pizza.id}>
-                        <img className="foto-pizza-carrito" src={pizza.img} /> {letraMayuscula(pizza.name)} - $ {pizza.price}
-                    </li>
+               <Card style={{ width: '25rem' }}>
+
+              <ListGroup className="list-group-flush">
+              {context.carro.map((pizza) => (
+                    <ListGroup.Item key={pizza.id}>
+                    <img className="foto-pizza-carrito" src={pizza.img} /> 1 {letraMayuscula(pizza.name)} por $ {pizza.price}
+                    </ListGroup.Item>
                 ))}
-                </ul>
-                <Button variant="success">Ir a Pagar</Button>  
-            </div>
+
+              </ListGroup>
+
+              <Button variant="success">Ir a Pagar</Button>  
+
+            </Card> 
             
         </div>
 

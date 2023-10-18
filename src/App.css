@@ -173,8 +173,3 @@ li {
   width: 4rem;
   height: 4rem;
 }
-
-.cont-pedidos{
-  display: flex;
-  flex-direction: column;
-}

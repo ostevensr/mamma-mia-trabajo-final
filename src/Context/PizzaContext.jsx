@@ -5,8 +5,12 @@ export const AppContext = createContext();
 
 export default function PizzaContext({ children }) {
     const [pizzas, setPizzas] = useState(null);
-    const [carro, setCarro] = useState(null);
+    const [carro, setCarro] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+
+    const addToCarro = (pizza) => {
+      setCarro([...carro, pizza]);
+    };
 
     useEffect(() => {
         consultaPizzas();
@@ -31,7 +35,7 @@ export default function PizzaContext({ children }) {
       };
 
     return (
-        <AppContext.Provider value={{ pizzas, carro }}>
+        <AppContext.Provider value={{ pizzas, carro, addToCarro }}>
             {children}
         </AppContext.Provider>
     );

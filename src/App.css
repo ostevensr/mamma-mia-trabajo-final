@@ -163,3 +163,18 @@
 li {
   list-style-type: none;
 }
+
+.carro-compras{
+  height: 100vh;
+  padding: 2rem;
+}
+
+.foto-pizza-carrito{
+  width: 4rem;
+  height: 4rem;
+}
+
+.cont-pedidos{
+  display: flex;
+  flex-direction: column;
+}

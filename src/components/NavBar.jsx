@@ -18,7 +18,7 @@ function NavBar() {
 
                     <div className="cont-links-navbar">
 
-                        <NavLink className={setActiveClass} to="/pokemones"> Pokemones </NavLink>
+                        <NavLink className={setActiveClass} to="/carro"> <img className="icono-navbar" src="./src/assets/compra.png"/> Carro de Compra </NavLink>
                     </div> 
 
                 </Navbar.Collapse>

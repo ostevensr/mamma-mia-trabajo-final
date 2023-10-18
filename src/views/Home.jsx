@@ -24,8 +24,14 @@ export default () => {
   const navigate = useNavigate();
 
   const verPizza = (pizzaId) => {
-    navigate(`/pizza/${pizzaId}`);
+    const pizza = totalPizzas.find((pizza) => pizza.id === pizzaId);
+    navigate(`/pizza/${pizzaId}`, { state: { pizza } });
     //console.log("pizzaId:", pizzaId);
+  };
+
+  const addCarro = (pizza) => {
+    context.addToCarro(pizza);
+    navigate("/carro", { state: { pizza } });
   };
 
   return (
@@ -65,7 +71,7 @@ export default () => {
               <Card.Body className="botones-card">
 
                 <Button onClick={() => verPizza(pizza.id)} variant="primary">Ver Más <img className="icono-boton" src="./src/assets/ojos.png"/></Button>
-                <Button variant="danger">Añadir <img className="icono-boton" src="./src/assets/compra.png"/></Button>
+                <Button onClick={() => addCarro(pizza)} variant="danger">Añadir <img className="icono-boton" src="./src/assets/compra.png"/></Button>
 
               </Card.Body>
 

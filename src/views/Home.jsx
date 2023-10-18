@@ -25,6 +25,7 @@ export default () => {
 
   const verPizza = (pizzaId) => {
     navigate(`/pizza/${pizzaId}`);
+    //console.log("pizzaId:", pizzaId);
   };
 
   return (
@@ -51,7 +52,7 @@ export default () => {
 
                 {pizza.ingredients.map((ingrediente, index) => (
                   <ListGroup.Item key={index}>
-                    <img className="icono-navbar" src="./src/assets/ingredientes.png"/> {letraMayuscula(ingrediente)}
+                    <img className="icono-ingrediente" src="./src/assets/ingredientes.png"/> {letraMayuscula(ingrediente)}
                   </ListGroup.Item>
                 ))}
 
@@ -63,8 +64,8 @@ export default () => {
 
               <Card.Body className="botones-card">
 
-                <Button onClick={() => verPizza(pizza.id)} variant="primary">Ver Más <img className="icono-navbar" src="./src/assets/ojos.png"/></Button>
-                <Button variant="danger">Añadir <img className="icono-navbar" src="./src/assets/compra.png"/></Button>
+                <Button onClick={() => verPizza(pizza.id)} variant="primary">Ver Más <img className="icono-boton" src="./src/assets/ojos.png"/></Button>
+                <Button variant="danger">Añadir <img className="icono-boton" src="./src/assets/compra.png"/></Button>
 
               </Card.Body>
 

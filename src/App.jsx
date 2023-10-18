@@ -25,10 +25,10 @@ function App() {
                     <NavBar />
                         <Routes>
                             <Route index element={<Home />} />
-                            <Route path="/home" element={<Home />} />
-                            <Route path="/:pizzaId" element={<DetallePizza />} />
-                            <Route path="/carro" element={<Carro />} />
-                            <Route path="*" element={<NotFound />} />
+                            <Route path="/home" element={<Home/>} />
+                            <Route path="pizza/:pizzaId" element={<DetallePizza/>} />
+                            <Route path="/carro" element={<Carro/>} />
+                            <Route path="*" element={<NotFound/>} />
                         </Routes>
                     </PizzaContext>
                 </BrowserRouter>

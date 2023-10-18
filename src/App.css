@@ -97,6 +97,16 @@
   height: 1.5rem;
 }
 
+.icono-boton{
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.icono-ingrediente{
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
 .active {
   color: #000000;
   text-decoration: none;
@@ -119,4 +129,37 @@
   display: flex;
   justify-content: center;
   gap: 1rem;
+}
+
+.detalle-pizza{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  padding: 2rem;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.img-detalle-pizza{
+  width: 40%;
+}
+
+.txt-detalle-pizza{
+  width: 60%;
+  border: #bc6c25;
+}
+
+.desc-detalle-pizza {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.cont-ingredientes{
+  padding: 1rem;
+}
+
+li {
+  list-style-type: none;
 }
